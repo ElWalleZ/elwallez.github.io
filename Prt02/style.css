@@ -2,22 +2,53 @@
 
 *{
     margin: 0;
+    background: #0a0519;
     box-sizing: border-box;
     font-family: 'Acme';
     color: white;
     user-select: none;
 }
 
+header{
+    background-size: cover;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+#LeaderBoard{
+    padding-left: 10px;
+}
+
+
+#btnLeaderBoard{
+    margin-top: 15px;
+    width: 235px;
+    background: #17122A;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 12px;
+    border-color: #604caa;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-width: 6px;
+}
+
+
+#btnLeaderBoard:hover{
+    background: #604caa;
+}
+
 main{
-    background: #0a0519;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
 }
-
 
 #headerTitulo {
     display: flex;
@@ -31,7 +62,7 @@ main{
     display: grid;
     grid-template-columns: repeat(3,200px);
     grid-template-rows: repeat(3,200px);
-    gap: 12px;
+    gap: 12px; 
 }
 
 #tablero .celda{
@@ -67,4 +98,47 @@ main{
 
 #btnReiniciar:hover{
     background: #604caa;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+#leaderboardList {
+    position: absolute; 
+    top: 95px; 
+    left: 10px; 
+    width: 435px;
+    background-color: #604caa65;
+    border-radius: 12px; 
+    padding: 10px; 
+    z-index: 100;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    max-height: 750px;
+}
+
+#leaderboard {
+    color: white;
+    font-size: 28px;
+    background-color: transparent;
+}
+
+#leaderboard li {
+    background-color: transparent;
+    padding: 15px 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2); 
+}
+
+#leaderboard li:last-child {
+    border-bottom: none;
 }
