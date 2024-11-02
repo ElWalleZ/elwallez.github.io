@@ -1,16 +1,79 @@
 var board = [];
-var rows = 8;
-var columns = 8;
+var rows = 5; 
+var columns = 5; 
 var mineCount = 5;
 var mineLocation = [];
 var tilesClicked = 0;
 var flagEnabled = false;
 var gameOver = false;
-var correctFlags = 0; // Track correctly flagged mines
+var correctFlags = 0;
 
 window.onload = function () {
+    document.getElementById("restart-button").addEventListener("click", resetGame);
+    const difficultySelect = document.getElementById("difficulty");
+    difficultySelect.value = "easy";
     document.getElementById("mine-counter").innerText = mineCount;
     document.getElementById("flag-button").addEventListener("click", setFlag);
+    startGame();
+    document.getElementById("difficulty").addEventListener("change", resetGame);
+}
+
+function setDifficulty(difficulty) {
+
+    switch (difficulty) {
+        case 'easy':
+            rows = 5;
+            columns = 5;
+            mineCount = 5;
+        break;
+
+        case 'medium':
+            rows = 8;
+            columns = 8;
+            mineCount = 10;
+        break;
+
+        case 'hard':
+            rows = 10;
+            columns = 10;
+            mineCount = 15;
+        break;
+
+        case 'very-hard':
+            rows = 12;
+            columns = 12;
+            mineCount = 20;
+        break;
+
+        case 'legend':
+            rows = 15;
+            columns = 15;
+            mineCount = 30;
+        break;
+
+        default:
+            rows = 5;
+            columns = 5;
+            mineCount = 5;
+        break;
+    }
+
+}
+
+function resetGame() {
+    const selectedDifficulty = document.getElementById("difficulty").value;
+    setDifficulty(selectedDifficulty);
+    board = [];
+    mineLocation = [];
+    tilesClicked = 0;
+    flagEnabled = false;
+    gameOver = false;
+    correctFlags = 0;
+
+    document.getElementById("flag-button").style.background = "lightgray";
+    document.getElementById("game-message").innerHTML = `Minas: <span id="mine-counter">${mineCount}</span>`;
+    document.getElementById("mine-counter").innerText = mineCount;
+    document.getElementById("board").innerHTML = ""; 
     startGame();
 }
 
@@ -29,13 +92,16 @@ function setMines() {
 
 function startGame() {
     setMines();
+    const boardElement = document.getElementById("board");
+    boardElement.style.gridTemplateColumns = `repeat(${columns}, 1fr)`; 
+
     for (let i = 0; i < rows; i++) {
         let row = [];
         for (let j = 0; j < columns; j++) {
             let tile = document.createElement("div");
             tile.id = i.toString() + "-" + j.toString();
             tile.addEventListener("click", clickTile);
-            document.getElementById("board").append(tile);
+            boardElement.append(tile);
             row.push(tile);
         }
         board.push(row); 
@@ -55,33 +121,30 @@ function clickTile() {
 
     let tile = this;
 
-    // Handle flagging
     if (flagEnabled) {
         if (tile.innerText === "") {
             tile.innerText = "🚩";
             if (mineLocation.includes(tile.id)) {
-                correctFlags += 1; // Correctly flagged mine
+                correctFlags += 1;
             }
         } else if (tile.innerText === "🚩") {
             tile.innerText = "";
             if (mineLocation.includes(tile.id)) {
-                correctFlags -= 1; // Unflagging a correct mine
+                correctFlags -= 1;
             }
         }
-        // Update mine counter display (not the actual mine count)
         document.getElementById("mine-counter").innerText = mineCount - correctFlags;
-        checkWin(); // Check for win condition after flagging
+        checkWin();
         return;
     }
 
-    // Prevent clicking a flagged tile when not in flag mode
     if (tile.innerText === "🚩") {
         return;
     }
 
-    // Handle tile clicking
     if (mineLocation.includes(tile.id)) {
         gameOver = true;
+        document.getElementById("game-message").innerText = "Perdiste!";
         revealMines();
         return;
     }
@@ -90,24 +153,21 @@ function clickTile() {
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
     checkMine(r, c);
-    checkWin(); // Check if the game has been won after revealing
+    checkWin(); 
 }
 
 function checkWin() {
-    let safeTiles = rows * columns - mineCount; // Total number of safe tiles
+    let safeTiles = rows * columns - mineCount;
 
-    // Check if all safe tiles are clicked
     if (tilesClicked === safeTiles) {
-        document.getElementById("mine-counter").innerText = "Cleared!";
+        document.getElementById("game-message").innerText = "Limpiaste el Campo!";
         gameOver = true;
         return;
     }
 
-    // Check if all bombs are flagged correctly
     if (correctFlags === mineCount) {
         let allMinesFlagged = true;
 
-        // Check if all flagged tiles are indeed mines
         for (let id of mineLocation) {
             let tile = document.getElementById(id);
             if (tile.innerText !== "🚩") {
@@ -117,7 +177,7 @@ function checkWin() {
         }
 
         if (allMinesFlagged) {
-            document.getElementById("mine-counter").innerText = "Cleared!";
+            document.getElementById("game-message").innerText = "Encontraste todas las Minas!";
             gameOver = true;
         }
     }
@@ -171,7 +231,7 @@ function checkMine(r, c) {
     }
 
     if (tilesClicked === rows * columns - mineCount) {
-        document.getElementById("mine-counter").innerText = "Cleared!";
+        document.getElementById("mine-counter").innerText = "Encontradas!";
         gameOver = true;
     }
 }
