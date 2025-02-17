@@ -1,0 +1,104 @@
+:root {
+  --dark: #16191c;
+  --dark-x: #1e2126;
+  --light: #ffffff;
+  --grey: #6c757d;
+}
+
+
+body{
+  font-family: "Libre Baskerville", serif ;
+  font-weight: 400;
+  color: var(--light);
+} 
+
+.other{
+  font-family: "Cabin", sans-serif ;
+}
+
+.form-control::placeholder {
+  color: rgba(0, 128, 255, 0.75);
+  opacity: 1;
+  }
+
+.bg-dark{ background-color: var(--dark) !important ; }    
+
+
+.bg-dark-x { 
+  background-color: var(--dark-x) !important ; 
+}
+
+.form-control , .btnx{
+  min-height: 3.1rem;
+  line-height: initial;
+}
+
+.form-control::placeholder {
+  color: var(--grey);
+  opacity: 1;
+}
+
+
+.like-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.card {
+  position: relative;
+}
+.card-img-top {
+  position: relative;
+}
+.like-container {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+}
+.sidebar-card {
+  background:var(--dark-x);
+  color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.sidebar-card h5 {
+  margin-bottom: 15px;
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.sidebar-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar-item button {
+  margin-left: auto;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 20px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

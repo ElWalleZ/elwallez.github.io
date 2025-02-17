@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+
+
+  </style>
+</head>
+<body class="bg-dark">
+  <nav class="navbar navbar-dark bg-dark-x py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Zalle</a>
+      <a href="profile.html" class="fw-bold text-decoration-none text-white btn-primary">Perfil</a>
+    </div>
+  </nav>
+
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar-card">
+          <h5>Amigos</h5>
+          <div class="sidebar-item">
+            <img src="https://picsum.photos/40/40?random=2" alt="Friend 1">
+            <div>AlanMM</div>
+          </div>
+          <div class="sidebar-item">
+            <img src="https://picsum.photos/40/40?random=3" alt="Friend 2">
+            <div>S1mple</div>
+          </div>
+          <div class="sidebar-item">
+            <img src="https://picsum.photos/40/40?random=4" alt="Friend 3">
+            <div>React</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <!--  -->
+        <div class="card bg-dark-x text-light" >
+          <div class="user-info ">
+            <img src="https://picsum.photos/40/40?random=1" alt="User profile">
+            <div>
+              <strong>@JLOOo</strong>
+              <p class="m-0">Ernesto Chavana</p>
+            </div>
+          </div>
+          <div class="position-relative w-100">
+            <img src="https://picsum.photos/600/600?random=22" class="card-img-top" alt="Contenido del usuario">
+            <div class="like-container">
+              <span class="like-button" data-liked="false">🤍 100</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>Amigo ven te invito una copa.</p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card bg-dark-x text-light" >
+          <div class="user-info ">
+            <img src="https://picsum.photos/40/40?random=2" alt="User profile">
+            <div>
+              <strong>@MaxiR</strong>
+              <p class="m-0">Juan Pérez</p>
+            </div>
+          </div>
+          <div class="position-relative w-100">
+            <img src="https://picsum.photos/600/600?random=21" class="card-img-top" alt="Contenido del usuario">
+            <div class="like-container">
+              <span class="like-button" data-liked="false">🤍 100</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>Me encanta Zalle <3 </p>
+          </div>
+        </div>
+        <!--  -->
+        <div class="card bg-dark-x text-light" >
+          <div class="user-info ">
+            <img src="https://picsum.photos/40/40?random=5" alt="User profile">
+            <div>
+              <strong>@Cxncorde</strong>
+              <p class="m-0">Oliver Atom</p>
+            </div>
+          </div>
+          <div class="position-relative w-100">
+            <img src="https://picsum.photos/600/600?random=24" class="card-img-top" alt="Contenido del usuario">
+            <div class="like-container">
+              <span class="like-button" data-liked="false">🤍 100</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>Me encanta Zalle <3 </p>
+          </div>
+        </div>
+        <!--  -->       
+          
+      </div>
+
+      <div class="col-md-3">
+        <div class="sidebar-card">
+          <h5>Perfiles en tendencia</h5>
+          <div class="sidebar-item">
+            <img src="https://picsum.photos/40/40?random=5" alt="Trending 1">
+            <div>@CrypoBROfr</div>
+            <button class="btn btn-sm btn-primary">Seguir</button>
+          </div>
+          <div class="sidebar-item">
+            <img src="https://picsum.photos/40/40?random=6" alt="Trending 2">
+            <div>@DantePa</div>
+            <button class="btn btn-sm btn-primary">Seguir</button>
+          </div>
+          <div class="sidebar-item">
+            <img src="https://picsum.photos/40/40?random=7" alt="Trending 3">
+            <div>@Danm</div>
+            <button class="btn btn-sm btn-primary">Seguir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".like-button").forEach(button => {
+        button.addEventListener("click", function () {
+          let isLiked = this.getAttribute("data-liked") === "true";
+          let likes = parseInt(this.innerHTML.split(" ")[1]);
+          this.setAttribute("data-liked", !isLiked);
+          this.innerHTML = isLiked ? `🤍 ${likes - 1}` : `❤️ ${likes + 1}`;
+        });
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

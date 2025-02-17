@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body class="bg-dark">
+    
+    <section>
+        <div class="row g-0">
+          <div class="col-lg-7 d-flex align-items-center">
+            <div id="carouselExampleSlidesOnly" class="carousel slide vh-100 w-100" data-bs-ride="carousel">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100" data-bs-interval="4000">
+                        <img src="https://picsum.photos/1600/1600?random=1&grayscale" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                    </div>
+                    <div class="carousel-item h-100" data-bs-interval="3000">
+                        <img src="https://picsum.photos/1600/1600?random=2&grayscale" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                    </div>
+                    <div class="carousel-item h-100" data-bs-interval="3000">
+                        <img src="https://picsum.photos/1600/1600?random=3&grayscale" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                    </div>
+                    <div class="carousel-item h-100" data-bs-interval="3000">
+                      <img src="https://picsum.photos/1600/1600?random=4&grayscale" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                    </div>
+                    <div class="carousel-item h-100" data-bs-interval="3000">
+                      <img src="https://picsum.photos/1600/1600?random=5&grayscale" class="d-block w-100 h-100 object-fit-cover" alt="...">
+                    </div>
+                </div>
+            </div>          
+        </div>
+        
+
+        <div class="col-lg-5 d-flex align-items-center justify-content-center vh-100 overflow-hidden">
+          <div class="px-lg-5 py-lg-4 p-4 w-100">
+            <div id="loginForm">
+                <h1 class=" mb-4 text-center">Bienvenido a <a class="text-decoration-none text-white fw-bold" href="index.html">Zalle</a></h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label fw-bold">Email</label>
+                        <input type="email" class="form-control bg-dark-x border-0 text-white" placeholder="Ingresa tu email" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label fw-bold">Contraseña</label>
+                      <input type="password" class="form-control bg-dark-x border-0 mb-2 text-light" placeholder="Ingresa tu contraseña" id="exampleInputPassword1">
+                      
+                      <div class="form-check d-flex align-items-center gap-2">
+                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label text-light" for="rememberMe">
+                          Recordar  <!-- Wrap content in main with flex-fill to push -->
+
+                        </label>
+                        <a href="#" class="form-label text-light ms-auto">¿Olvidaste tu contraseña?</a>
+                      </div>
+                  
+                  </div>
+                  
+                    <button type="submit" class="btnx btn-primary w-100">Iniciar sesión</button>
+                </form>
+            </div>
+            
+            <div id="registerForm" style="display: none; max-height: 80vh; overflow-y: auto;">
+              <h1 class="fw-bold mb-4 text-center">Crea tu cuenta</h1>
+              <form id="registrationForm">
+                  <div class="mb-3">
+                      <label for="username" class="form-label fw-bold">Username</label>
+                      <input type="text" class="form-control bg-dark-x border-0 text-white" placeholder="Ingresa tu username" id="username" name="username" required>
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="registerEmail" class="form-label fw-bold">Email</label>
+                      <input type="email" class="form-control bg-dark-x border-0 text-white" placeholder="Ingresa tu email" id="registerEmail" name="email" required>
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="registerPassword" class="form-label fw-bold">Contraseña</label>
+                      <input type="password" class="form-control bg-dark-x border-0 text-light" placeholder="Crea una contraseña" id="registerPassword" name="password" required>
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="confirmPassword" class="form-label fw-bold">Confirmar Contraseña</label>
+                      <input type="password" class="form-control bg-dark-x border-0 text-light" placeholder="Repite la contraseña" id="confirmPassword" name="confirmPassword" required>
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="name" class="form-label fw-bold">Nombre</label>
+                      <input type="text" class="form-control bg-dark-x border-0 text-white" placeholder="Ingresa tu nombre" id="name" name="name" required>
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="surname" class="form-label fw-bold">Apellidos</label>
+                      <input type="text" class="form-control bg-dark-x border-0 text-white" placeholder="Ingresa tus apellidos" id="surname" name="surname">
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="gender" class="form-label fw-bold">Género</label>
+                      <select id="gender" name="gender" class="form-control bg-dark-x border-0 text-white" required>
+                          <option value="[Seleccione]">[Seleccione]</option>
+                          <option value="Hombre">Hombre</option>
+                          <option value="Mujer">Mujer</option>
+                          <option value="No Aplica">No Aplica</option>
+                          <option value="Prefiero no Decirlo">Prefiero no Decirlo</option>
+                          <option value="Otro">Otro</option>
+                      </select>
+                  </div>
+          
+                  <div id="otherGenderContainer" style="display: none;">
+                      <label for="otherGender" class="form-label fw-bold">Especifica tu género:</label>
+                      <input type="text" class="form-control bg-dark-x border-0 text-white" id="otherGender" name="otherGender">
+                  </div>
+          
+                  <div class="mb-3">
+                      <label for="dob" class="form-label fw-bold">Fecha de nacimiento</label>
+                      <input type="date" class="form-control bg-dark-x border-0 text-white" id="dob" name="dob" required>
+                  </div>
+          
+                  <button type="submit" class="btnx btn-success w-100">Registrarse</button>
+              </form>
+          
+              <div id="errorMessages" style="color: red; display: none;"></div>
+          </div>
+                              
+            <div class="text-center px-lg-3 pb-lg-4 p-4 w-100 mt-auto">
+              <p id="toggleToRegisterContainer" class="d-inline-block mb-0">
+                  ¿No tienes cuenta? 
+                  <a id="toggleToRegister" class="text-light fw-bold" href="#">Créala ahora</a>
+              </p>
+              <p id="toggleToLoginContainer" class="d-inline-block mb-0 d-none" >
+                  ¿Ya tienes cuenta? 
+                  <a id="toggleToLogin" class="text-light fw-bold" href="#">Inicia sesión</a>
+              </p>
+            </div> 
+
+          </div>
+
+        </div>
+          
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script>
+      document.getElementById("toggleToRegister").addEventListener("click", function(event) {
+          event.preventDefault();
+          document.getElementById("loginForm").style.display = "none";
+          document.getElementById("registerForm").style.display = "block";
+          document.getElementById("toggleToRegisterContainer").classList.add("d-none");
+          document.getElementById("toggleToLoginContainer").classList.remove("d-none");
+      });
+  
+      document.getElementById("toggleToLogin").addEventListener("click", function(event) {
+          event.preventDefault();
+          document.getElementById("registerForm").style.display = "none";
+          document.getElementById("loginForm").style.display = "block";
+          document.getElementById("toggleToLoginContainer").classList.add("d-none");
+          document.getElementById("toggleToRegisterContainer").classList.remove("d-none");
+      });
+    </script>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+      function showDarkSwal(title, text, icon) {
+        Swal.fire({
+            title: title,
+            html: text,
+            icon: icon,
+            background: "#343a40",  
+            color: "#ffffff",       
+            confirmButtonColor: "#0d6efd", 
+            customClass: {
+                popup: 'swal2-dark',
+            }
+        });
+      }
+
+
+
+    $(document).ready(function() {
+      $("#gender").change(function() {
+          if ($(this).val() === "Otro") {
+              $("#otherGenderContainer").show();
+          } else {
+              $("#otherGenderContainer").hide();
+              $("#otherGender").val(''); 
+          }
+      });
+
+      $("#registrationForm").submit(function(event) {
+          event.preventDefault(); 
+          var errorMessages = [];
+
+          var username = $("#username").val().trim();
+          var password = $("#registerPassword").val().trim();
+          var confirmPassword = $("#confirmPassword").val().trim();
+          var email = $("#registerEmail").val().trim();
+          var name = $("#name").val().trim();
+          var gender = $("#gender").val();
+          var dob = $("#dob").val();
+          var otherGender = $("#otherGender").val().trim();
+
+          if (!username) errorMessages.push("Username es obligatorio.");
+          if (!password) errorMessages.push("Password es obligatorio.");
+          if (password !== confirmPassword) errorMessages.push("Las contraseñas no coinciden.");
+          if (!email || !validateEmail(email)) errorMessages.push("Email inválido.");
+          if (!name) errorMessages.push("Nombre es obligatorio.");
+          if (gender === "[Seleccione]") errorMessages.push("Selecciona un género.");
+          if (gender === "Otro" && !otherGender) errorMessages.push("Especifica tu género.");
+          if (!dob || !validateAge(dob)) errorMessages.push("Debes tener al menos 18 años.");
+
+          if (errorMessages.length > 0) {
+            showDarkSwal("Faltan datos", errorMessages.join("<br>"), "error");
+          } else {
+            window.location.href = "timeline.html";
+          }
+      });
+
+      function validateEmail(email) {
+          var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+          return regex.test(email);
+      }
+
+      function validateAge(date) {
+          var birthDate = new Date(date);
+          var today = new Date();
+          var age = today.getFullYear() - birthDate.getFullYear();
+          var m = today.getMonth() - birthDate.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+              age--;
+          }
+          return age >= 18;
+      }
+    });
+
+    $(document).ready(function() {
+      $("#loginForm form").submit(function(event) {
+          event.preventDefault();
+
+          var email = $("#exampleInputEmail1").val().trim();
+          var password = $("#exampleInputPassword1").val().trim();
+          var errors = [];
+
+          if (!email) errors.push("El campo de email es obligatorio.");
+          if (!password) errors.push("El campo de contraseña es obligatorio.");
+
+          if (errors.length > 0) {
+              showDarkSwal("Faltan datos", errors.join("<br>"), "error");
+          } else {
+            window.location.href = "timeline.html";
+          }
+      });
+    });
+      
+  </script>
+    
+    
+  
+ 
+  
+</body>
+</html>
